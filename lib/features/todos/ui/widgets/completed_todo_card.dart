@@ -18,9 +18,16 @@ class CompletedTodoCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(todo.title ?? "", style: TextStyle(
-                color: theme.colorScheme.primary, fontSize: 18.0
+                color: theme.colorScheme.primary,
+                fontSize: 13.0,
+                fontFamily: "Jost",
+                fontWeight: FontWeight.w700
             ),),
-            Text(todo.description ?? "", style: const TextStyle(fontSize: 14.0),),
+            Text(todo.description ?? "", style: TextStyle(
+                fontSize: 10.0,
+                fontFamily: "Jost",
+                color: theme.colorScheme.tertiary,
+                fontWeight: FontWeight.w400),),
           ],
         ),
       ),

@@ -32,7 +32,7 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
             const SizedBox(height: 10.0,),
             CustomTextField(controller: descriptionController, hintText: "Detail"),
             const SizedBox(height: 50.0,),
-            CustomElevatedButton(btnText: "ADD", onPressed: (){
+            CustomElevatedButton(btnText: "ADD", fontSize: 20.0, onPressed: (){
               String title = titleController.text.trim();
               String description = descriptionController.text.trim();
               // title of a todo cannot miss so validate to check

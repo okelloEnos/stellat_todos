@@ -16,20 +16,29 @@ class TodosApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
-          primary: Colors.deepPurple,
-          background: Colors.deepPurple.shade100,
-          secondary: Colors.white
+            seedColor: const Color(0XFF9395D3),
+          primary: const Color(0XFF9395D3),
+          onPrimary: Colors.white,
+          secondary: Colors.white,
+          onSecondary: const Color(0XFF9395D3),
+          tertiary: Colors.black,
+          onTertiary: Colors.white,
+          background: const Color(0XFFD6D7EF),
+          onBackground: Colors.white,
+          outline: const Color(0XFFB3B7EE),
         ),
-        hintColor: Colors.grey,
+        hintColor: const Color(0XFF8B8787),
         useMaterial3: true,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.deepPurple.shade300,
-          iconTheme: const IconThemeData(color: Colors.white),
-          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0XFF9395D3),
+          iconTheme: IconThemeData(color: Colors.white),
+          titleTextStyle: TextStyle(color: Colors.white,
+              fontSize: 24.0, fontFamily: "Jost",
+              fontWeight: FontWeight.w700
+          ),
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.deepPurple.shade300,
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0XFF9395D3),
           foregroundColor: Colors.white,
         ),
         cardTheme: CardTheme(
@@ -42,6 +51,15 @@ class TodosApp extends StatelessWidget {
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white
+        ),
+        snackBarTheme: const SnackBarThemeData(
+          backgroundColor: Color(0XFF9395D3),
+          contentTextStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 13.0,
+              fontFamily: "Jost",
+              fontWeight: FontWeight.w700
+          )
         )
         
       ),

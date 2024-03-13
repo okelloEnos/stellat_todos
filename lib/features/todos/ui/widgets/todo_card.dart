@@ -29,9 +29,16 @@ class TodoCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(todo.title ?? "", style: TextStyle(
-                  color: theme.colorScheme.primary, fontSize: 18.0
+                  color: theme.colorScheme.primary,
+                    fontSize: 13.0,
+                    fontFamily: "Jost",
+                    fontWeight: FontWeight.w700
                 ),),
-                Text(todo.description ?? "", style: const TextStyle(fontSize: 14.0),),
+                Text(todo.description ?? "", style: TextStyle(
+                    fontSize: 10.0,
+                    fontFamily: "Jost",
+                    color: theme.colorScheme.tertiary,
+                    fontWeight: FontWeight.w400),),
               ],
             ),
            (todo.isCompleted ?? false) ? const SizedBox.shrink() : Row(
@@ -43,23 +50,19 @@ class TodoCard extends StatelessWidget {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => EditTodoScreen(
                         todo: todo, onEditTodo: onEditTodo, todoIndex: todoIndex,)));
                   },
-                  icon: Icon(Icons.edit_outlined, color: theme.colorScheme.primary,),
+                  icon: Icon(Icons.edit_outlined, color: theme.colorScheme.outline,),
                 ),
                 IconButton(
                   onPressed: () {
-                    //todo: implement delete functionality
-                    // deleteTask(index)
                         onDeleteTodo(todoIndex);
                   },
-                  icon: Icon(Icons.delete_outline, color: theme.colorScheme.primary,),
+                  icon: Icon(Icons.delete_outline, color: theme.colorScheme.outline,),
                 ),
                 IconButton(
                   onPressed: () {
-                    // todo: complete task
-                    // toggleTaskCompletion(index);
                     onCompleteTodo(todoIndex);
                   },
-                  icon: Icon(Icons.check_circle_outline, color: theme.colorScheme.primary,),
+                  icon: Icon(Icons.check_circle_outline, color: theme.colorScheme.outline,),
                 ),
               ],
             ),

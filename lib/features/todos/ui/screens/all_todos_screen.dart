@@ -17,7 +17,7 @@ class AllTodosScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: theme.colorScheme.background,
       appBar: AppBar(
-        title: const Text('TODO APP', style: TextStyle(fontSize: 20)),
+        title: const Text('TODO APP'),
         actions: [
           IconButton(
             onPressed: () {},
@@ -29,7 +29,12 @@ class AllTodosScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 4.0, right: 4.0, top: 10.0),
         child: listOfTodos.isEmpty ? Center(
           child: Text("There are no tasks yet",
-            style: TextStyle(color: theme.hintColor),
+            style: TextStyle(
+                color: theme.hintColor,
+                fontSize: 13.0,
+                fontFamily: "Jost",
+                fontWeight: FontWeight.w700
+            ),
           ),
         ) : TodosList(
           listOfTodos: listOfTodos,

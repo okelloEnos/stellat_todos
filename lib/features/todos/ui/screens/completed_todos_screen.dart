@@ -16,7 +16,12 @@ class CompletedTodosScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 4.0, right: 4.0, top: 10.0),
         child: listOfCompletedTodos.isEmpty ? Center(
           child: Text("There are no completed tasks yet",
-          style: TextStyle(color: theme.hintColor),
+          style: TextStyle(
+              color: theme.hintColor,
+              fontSize: 13.0,
+              fontFamily: "Jost",
+              fontWeight: FontWeight.w700
+          ),
           ),
         ) : CompletedTodos(
           completedListOfTodos: listOfCompletedTodos,

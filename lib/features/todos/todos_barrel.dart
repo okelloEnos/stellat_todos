@@ -7,4 +7,3 @@ export 'data/model/todo.dart';
 export 'ui/widgets/completed_todos.dart';
 export 'ui/widgets/todos_list.dart';
 export 'ui/widgets/completed_todo_card.dart';
-export 'business_logic/todos_business_logic.dart';

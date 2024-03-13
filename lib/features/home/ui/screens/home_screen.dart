@@ -9,7 +9,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // final screenOptions = [const AllTodosScreen(), const CompletedTodosScreen()];
   int currentIndex = 0;
 
   // list of todos within a state
@@ -99,8 +98,16 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         selectedItemColor: theme.colorScheme.primary,
         unselectedItemColor: theme.hintColor,
-        selectedLabelStyle: TextStyle(color: theme.colorScheme.primary),
-        unselectedLabelStyle: TextStyle(color: theme.hintColor),
+        selectedLabelStyle: TextStyle(
+            color: theme.colorScheme.primary,
+            fontSize: 10.0,
+            fontFamily: "Jost",
+            fontWeight: FontWeight.w400),
+        unselectedLabelStyle: TextStyle(
+            color: theme.hintColor,
+            fontSize: 10.0,
+            fontFamily: "Jost",
+            fontWeight: FontWeight.w400),
       ),
     );
   }

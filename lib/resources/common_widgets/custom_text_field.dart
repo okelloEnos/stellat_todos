@@ -14,14 +14,16 @@ class CustomTextField extends StatelessWidget {
     return  TextFormField(
       controller: controller,
       style: TextStyle(
+          fontFamily: "Jost",
           color: theme.colorScheme.primary,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w400,
           fontSize: 16.0),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(
-            color: Colors.grey.shade400,
-            fontWeight: FontWeight.normal,
+            fontFamily: "Jost",
+            color: theme.hintColor,
+            fontWeight: FontWeight.w400,
             fontSize: 16.0),
         border: UnderlineInputBorder(
             borderSide: BorderSide(
