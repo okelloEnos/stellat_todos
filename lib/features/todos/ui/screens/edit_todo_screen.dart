@@ -5,7 +5,9 @@ import '../../todos_barrel.dart';
 
 class EditTodoScreen extends StatefulWidget {
   final Todo todo;
-  const EditTodoScreen({super.key, required this.todo});
+  final Function(int, String, String) onEditTodo;
+  final int todoIndex;
+  const EditTodoScreen({super.key, required this.todo, required this.onEditTodo, required this.todoIndex});
 
   @override
   State<EditTodoScreen> createState() => _EditTodoScreenState();
@@ -18,8 +20,8 @@ class _EditTodoScreenState extends State<EditTodoScreen> {
   @override
   void initState() {
     super.initState();
-    titleController.text = widget.todo.title;
-    descriptionController.text = widget.todo.description;
+    titleController.text = widget.todo.title ?? "";
+    descriptionController.text = widget.todo.description ?? "";
   }
 
   @override
@@ -45,12 +47,23 @@ class _EditTodoScreenState extends State<EditTodoScreen> {
                 Expanded(
                   child: CustomElevatedButton(btnText: "Update", onPressed: (){
 // todo: update todo functionality
+                    String title = titleController.text.trim();
+                    String description = descriptionController.text.trim();
+// title of a todo cannot miss so validate to check
+                    if (title.isNotEmpty) {
+                      widget.onEditTodo(widget.todoIndex, title, description);
+                      Navigator.pop(context);
+                    }
+                    else{
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Todo title is missing")));
+                    }
                   }),
                 ),
                 const SizedBox(width: 20.0,),
                 Expanded(
                   child: CustomElevatedButton(btnText: "Cancel", onPressed: (){
 // todo: cancel todo functionality
+                  Navigator.pop(context);
                   }),
                 ),
               ],

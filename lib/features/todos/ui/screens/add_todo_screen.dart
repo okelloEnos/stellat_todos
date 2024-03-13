@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stellar_todo_list/resources/resource_barrel.dart';
 
+import '../../todos_barrel.dart';
+
 class AddTodoScreen extends StatefulWidget {
-  const AddTodoScreen({super.key});
+  final Function(Todo) onAddTodo;
+  const AddTodoScreen({super.key, required this.onAddTodo});
 
   @override
   State<AddTodoScreen> createState() => _AddTodoScreenState();
@@ -30,7 +33,16 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
             CustomTextField(controller: descriptionController, hintText: "Detail"),
             const SizedBox(height: 50.0,),
             CustomElevatedButton(btnText: "ADD", onPressed: (){
-// todo: add todo functionality
+              String title = titleController.text.trim();
+              String description = descriptionController.text.trim();
+              // title of a todo cannot miss so validate to check
+              if (title.isNotEmpty) {
+                widget.onAddTodo(Todo(title: title, description: description));
+                Navigator.pop(context);
+              }
+              else{
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Todo title is missing")));
+              }
             })
           ],
         ),

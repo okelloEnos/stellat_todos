@@ -1,14 +1,14 @@
 class Todo{
-  final int id;
-  final String title;
-  final String description;
-  final bool isCompleted;
+  final int? id;
+  final String? title;
+  final String? description;
+  final bool? isCompleted;
 
   Todo({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.isCompleted
+    this.id,
+    this.title,
+    this.description,
+    this.isCompleted
   });
 
   Todo copyWith({

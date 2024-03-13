@@ -4,7 +4,11 @@ import '../../todos_barrel.dart';
 
 class TodosList extends StatelessWidget {
   final List<Todo> listOfTodos;
-  const TodosList({super.key, required this.listOfTodos});
+  final Function(int, String, String) onEditTodo;
+  final Function(int) onDeleteTodo;
+  final Function(int) onCompleteTodo;
+  const TodosList({super.key, required this.listOfTodos, required this.onEditTodo,
+    required this.onCompleteTodo, required this.onDeleteTodo});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,12 @@ class TodosList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: listOfTodos.length,
         itemBuilder: (builderContext, index){
-      return TodoCard(todo: listOfTodos[index]);
+      return TodoCard(
+        todo: listOfTodos[index],
+        onEditTodo: onEditTodo,
+        onCompleteTodo: onCompleteTodo,
+        onDeleteTodo: onDeleteTodo,
+        todoIndex: index,);
     });
   }
 }

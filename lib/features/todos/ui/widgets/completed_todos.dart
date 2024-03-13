@@ -4,6 +4,7 @@ import '../../todos_barrel.dart';
 
 class CompletedTodos extends StatelessWidget {
   final List<Todo> completedListOfTodos;
+
   const CompletedTodos({super.key, required this.completedListOfTodos});
 
  
@@ -16,7 +17,7 @@ class CompletedTodos extends StatelessWidget {
         shrinkWrap: true,
         itemCount: completedListOfTodos.length,
         itemBuilder: (builderContext, index){
-          return TodoCard(todo: completedListOfTodos[index]);
+          return CompletedTodoCard(todo: completedListOfTodos[index]);
         });
   }
 }
